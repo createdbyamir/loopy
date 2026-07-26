@@ -1,18 +1,11 @@
-export default function Home() {
+import Image from "next/image"
+import Data from "@/components/Data/Data"
+
+export default function home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-black px-6 text-center text-white">
-      <div className="mb-8">
-        <h1 className="text-5xl font-bold tracking-widest">LOOPY</h1>
-      </div>
-
-      <p className="mb-2 text-2xl font-semibold">
-        Website Under Construction
-      </p>
-
-      <p className="max-w-md text-gray-400">
-        I'm currently rebuilding Loopy using Next.js. Check back soon for
-        updates.
-      </p>
-    </main>
-  );
+    <>
+      <Data />
+      <Image src="/banner.jpg" width={800} height={540} alt="Banner"/>
+    </>
+  )
 }
