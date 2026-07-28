@@ -9,7 +9,7 @@ export default function Artist(){
         .then(data => {
             console.log(data);
         });
-    });
+    }, []);
 
     return (
         <>

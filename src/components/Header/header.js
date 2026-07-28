@@ -4,7 +4,7 @@ import Links from "./links"
 
 export default function Header() {
     return (
-        <div className="w-full fixed py-3 bg-black">
+        <div className="w-full fixed py-3 bg-black text-white">
             <div className="flex items-center justify-between m-auto max-w-[96%] lg:max-w-[1240px] w-full">
                 <Logo />
                 <Menu />
