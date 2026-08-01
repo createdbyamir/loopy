@@ -16,6 +16,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 import "./globals.css";
 import Header from "@/components/Header/header";
+import Footer from "@/components/Footer/footer";
 
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
           <Header/>
         </header> 
         <main className="mt-[60px]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

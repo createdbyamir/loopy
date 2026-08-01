@@ -20,24 +20,42 @@ export default function Album(){
 
     return (
         <>
-            <h1 className="text-center text-6xl uppercase pb-4">Music</h1>
-            <ul>
-                {albumsItems.map(item => {
-                    return (
-                        <li key={item.name}>
-                            <Link href={`/album/${item.id}`}>
-                                <Image 
-                                    src={item.images[1].url} 
-                                    height={item.images[1].height} 
-                                    width={item.images[1].width}
-                                    alt={`${item.name} ${item.album_type} art`}
-                                />
-                                <h1>{item.name}</h1>
+            <section className="max-w-[1240px] mx-auto px-6 py-24">
+                <h1 className="text-center text-6xl md:text-8xl uppercase tracking-wider mb-16">
+                    Music
+                </h1>
+
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {albumsItems.map((item) => (
+                        <li key={item.id}>
+                            <Link
+                                href={`/album/${item.id}`}
+                                className="group block"
+                            >
+                                <div className="overflow-hidden bg-card">
+                                    <Image
+                                        src={item.images[1].url}
+                                        width={item.images[1].width}
+                                        height={item.images[1].height}
+                                        alt={`${item.name} ${item.album_type} artwork`}
+                                        className="w-full h-auto transition duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+
+                                <div className="mt-5 space-y-2">
+                                    <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                                        {item.album_type}
+                                    </p>
+
+                                    <h2 className="text-xl uppercase group-hover:text-white transition-colors">
+                                        {item.name}
+                                    </h2>
+                                </div>
                             </Link>
                         </li>
-                    )
-                })}
-            </ul>
+                    ))}
+                </ul>
+            </section>
         </>
     )
 }

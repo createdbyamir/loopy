@@ -1,38 +1,37 @@
 'use client'
 
-const links = [
-  { name: 'Music', href: '/music'},
-  { name: 'Gallery', href: '/gallery'},
-  { name: 'Contact', href: '/contact'},
-];
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from 'clsx';
+import clsx from "clsx";
+
+const links = [
+    { name: "Music", href: "/music" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
+];
 
 export default function Menu() {
-    const pathname = usePathname()
+    const pathname = usePathname();
+
     return (
-        <>
-           <ul className="flex">
-            {links.map((link) => {
-                return (
-                    <Link
-                        key={link.name}
-                        href={link.href}
-                        className={clsx(
-                        '',
-                        {
-                            'underline': pathname === link.href,
-                        },
-                        )}
-                    >
-                    {link.name}
-                    </Link>
-                );
-            })}
-           </ul>
-           
-        </>
-    )
+        <nav>
+            <ul className="flex items-center gap-10">
+                {links.map((link) => (
+                    <li key={link.name}>
+                        <Link
+                            href={link.href}
+                            className={clsx(
+                                "uppercase tracking-[0.2em] transition-opacity duration-300",
+                                pathname === link.href
+                                    ? "opacity-100"
+                                    : "opacity-60 hover:opacity-100"
+                            )}
+                        >
+                            {link.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
 }

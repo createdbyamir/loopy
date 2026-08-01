@@ -23,6 +23,9 @@ export async function GET(request, { params }){
             "Authorization": `${tokenData.token_type} ${tokenData.access_token}`
         }
     })
+    console.log("id:", id);
+console.log("token:", tokenData);
+console.log("spotify status:", albumResponse.status);
     const albumData = await albumResponse.json();
     console.log(albumData)
 
