@@ -2,14 +2,14 @@
 
 import { useEffect } from "react";
 
-export default function Data(){
+export default function Artist(){
     useEffect(() => {
-        fetch("/api/spotify")
+        fetch("/api/spotify/artist")
         .then(response => response.json())
         .then(data => {
             console.log(data);
         });
-    });
+    }, []);
 
     return (
         <>
