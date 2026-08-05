@@ -7,7 +7,7 @@ import clsx from "clsx";
 const links = [
     { name: "Music", href: "/music" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/contact" },
+    { name: "Tour", href: "/tour" },
 ];
 
 export default function Menu() {

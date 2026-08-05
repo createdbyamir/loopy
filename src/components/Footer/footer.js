@@ -4,7 +4,7 @@ import { PiCopyrightLight } from "react-icons/pi";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-border mt-32">
+        <footer className="border-t border-border mt-22">
             <div className="mx-auto flex max-w-[1240px] flex-col items-center justify-between gap-8 px-6 py-12 md:flex-row">
 
                 <Logo />

@@ -48,38 +48,22 @@ const images = [
     }
 ]
 
-export default function Images() {
+export default function Images({ limit }) {
+
+    const galleryData = limit ? images.slice(0, limit) : images;
+
     return (
-<div className="grid grid-cols-12 auto-rows-[180px] gap-4">
-        {images.map((item, index) => {
-          const featured = index % 6 === 0;
-
-          return (
-            <div
-              key={item.id}
-              className={`relative overflow-hidden border border-white/10 transition duration-300 hover:border-white/30 group
-                ${
-                  featured
-                    ? "col-span-12 md:col-span-8 row-span-2"
-                    : "col-span-6 md:col-span-4 row-span-1"
-                }`}
-            >
-              <Image
-                src={item.image}
-                alt={item.alt}
-                fill
-                sizes="(max-width:768px) 100vw, 33vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition" />
-
-              <p className="absolute bottom-4 left-4 font-mono text-xs uppercase tracking-[0.3em] text-[#f0ede8] opacity-0 group-hover:opacity-100 transition">
-                {item.alt}
-              </p>
-            </div>
-          );
-        })}
-      </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {galleryData.map((item) => (
+                    <li key={item.id} className="relative w-full aspect-[3/4]">
+                        <Image 
+                            src={item.image} 
+                            alt={item.alt}
+                            fill
+                            className="object-cover"
+                        />
+                    </li>
+                ))}
+            </ul>
     )
 }

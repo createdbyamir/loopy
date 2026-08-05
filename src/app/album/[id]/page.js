@@ -26,102 +26,100 @@ export default function Album() {
     return (
         <>
             <section className="max-w-[1240px] mx-auto px-6 py-24">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <Image
+                        src={albumItem.images[0].url}
+                        width={albumItem.images[0].width}
+                        height={albumItem.images[0].height}
+                        alt={albumItem.name}
+                        className="w-full max-w-[550px] mx-auto"
+                    />
 
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
 
-        <Image
-            src={albumItem.images[0].url}
-            width={albumItem.images[0].width}
-            height={albumItem.images[0].height}
-            alt={albumItem.name}
-            className="w-full max-w-[550px] mx-auto"
-        />
+                        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                            {albumItem.album_type}
+                        </p>
 
-        <div>
+                        <h1 className="text-5xl md:text-7xl uppercase leading-none mb-6">
+                            {albumItem.name}
+                        </h1>
 
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">
-                {albumItem.album_type}
-            </p>
+                        <div className="space-y-3 text-muted-foreground">
 
-            <h1 className="text-5xl md:text-7xl uppercase leading-none mb-6">
-                {albumItem.name}
-            </h1>
+                            <p>
+                                Artist
+                                <span className="text-white ml-3">
+                                    {albumItem.artists.map(a => a.name).join(", ")}
+                                </span>
+                            </p>
 
-            <div className="space-y-3 text-muted-foreground">
+                            <p>
+                                Released
+                                <span className="text-white ml-3">
+                                    {albumItem.release_date}
+                                </span>
+                            </p>
 
-                <p>
-                    Artist
-                    <span className="text-white ml-3">
-                        {albumItem.artists.map(a => a.name).join(", ")}
-                    </span>
-                </p>
+                            <p>
+                                Tracks
+                                <span className="text-white ml-3">
+                                    {albumItem.total_tracks}
+                                </span>
+                            </p>
 
-                <p>
-                    Released
-                    <span className="text-white ml-3">
-                        {albumItem.release_date}
-                    </span>
-                </p>
+                            <p>
+                                Label
+                                <span className="text-white ml-3">
+                                    {albumItem.label}
+                                </span>
+                            </p>
 
-                <p>
-                    Tracks
-                    <span className="text-white ml-3">
-                        {albumItem.total_tracks}
-                    </span>
-                </p>
-
-                <p>
-                    Label
-                    <span className="text-white ml-3">
-                        {albumItem.label}
-                    </span>
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div className="mt-24">
-
-        <h2 className="text-3xl uppercase mb-10">
-            Track List
-        </h2>
-
-        <ul className="space-y-5">
-
-            {albumItem.tracks.items.map(track => (
-                <li
-                    key={track.id}
-                    className="flex justify-between border-b border-border pb-4"
-                >
-
-                    <div className="flex gap-6">
-
-                        <span className="text-muted-foreground">
-                            {track.track_number}
-                        </span>
-
-                        <span>
-                            {track.name}
-                        </span>
+                        </div>
 
                     </div>
 
-                    <span className="text-muted-foreground">
-                        {Math.floor(track.duration_ms / 60000)}:
-                        {String(Math.floor((track.duration_ms % 60000) / 1000)).padStart(2, "0")}
-                    </span>
+                </div>
 
-                </li>
-            ))}
+                <div className="mt-24">
 
-        </ul>
+                    <h2 className="text-3xl uppercase mb-10">
+                        Track List
+                    </h2>
 
-    </div>
+                    <ul className="space-y-5">
 
-</section>
+                        {albumItem.tracks.items.map(track => (
+                            <li
+                                key={track.id}
+                                className="flex justify-between border-b border-border pb-4"
+                            >
+
+                                <div className="flex gap-6">
+
+                                    <span className="text-muted-foreground">
+                                        {track.track_number}
+                                    </span>
+
+                                    <span>
+                                        {track.name}
+                                    </span>
+
+                                </div>
+
+                                <span className="text-muted-foreground">
+                                    {Math.floor(track.duration_ms / 60000)}:
+                                    {String(Math.floor((track.duration_ms % 60000) / 1000)).padStart(2, "0")}
+                                </span>
+
+                            </li>
+                        ))}
+
+                    </ul>
+
+                </div>
+
+            </section>
         </>
     );
 }
