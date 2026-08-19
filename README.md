@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Loopy
 
-## Getting Started
+A responsive artist website built with Next.js, React and Tailwind CSS for rapper Loopy.
 
-First, run the development server:
+The project was created as a practical frontend project based around a real artist who did not have a dedicated website. The aim was to create a simple place where fans could view music, upcoming tour dates and gallery content.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Next.js
+* React
+* JavaScript
+* Tailwind CSS
+* Vercel
+* Git & GitHub
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## What I Built
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site currently includes:
 
-## Learn More
+* Responsive multi-page layout
+* Music section displaying releases and artwork
+* Tour dates with individual event information
+* Image gallery
+* Navigation between dedicated pages
+* Reusable React components
+* Data-driven content for music, tours and gallery items
+* Responsive layouts across desktop and mobile
 
-To learn more about Next.js, take a look at the following resources:
+Rather than hard-coding content directly into each component, the project keeps content data separate from the UI. Components can then map over that data and display different amounts of content depending on the page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This makes the site easier to update and avoids duplicating the same markup throughout the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Current Status
 
-## Deploy on Vercel
+The main version of Loopy is complete and deployed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The core pages, responsive design and content structure are working. It currently acts as a finished frontend project rather than a full content-management platform.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Future updates may still be made as I improve the project or learn new techniques.
+
+## Possible Improvements
+
+Some areas I could explore in the future include:
+
+* Move artist content to a CMS or database instead of storing it locally
+* Add an admin interface for managing music, tour dates and gallery content
+* Add automated testing
+* Improve accessibility testing
+* Improve SEO metadata and structured data
+* Add loading and error states where appropriate
+* Further optimise images and performance
+* Add animations and smaller interaction details
+* Introduce TypeScript
+* Improve component testing and overall test coverage
+
+## What I Learned
+
+This project helped me practise:
+
+* Structuring a Next.js application
+* Building reusable React components
+* Separating application data from UI components
+* Rendering dynamic content from data
+* Creating responsive layouts with Tailwind CSS
+* Thinking about how a frontend can remain maintainable as content grows
+* Taking a project from an initial idea through to deployment
+
+## Live Site
+
+https://loopy.createdbyamir.com/
